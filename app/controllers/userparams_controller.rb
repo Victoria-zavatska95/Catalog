@@ -28,10 +28,10 @@ class UserparamsController < ApplicationController
   def update
     @userparam = Userparam.find_by(user_id: current_user.id)
     if @userparam.update(profile_params)
-    	flash[:notice] = "You successfully created profile"
+    	flash[:notice] = "You successfully edited profile"
        redirect_to userparam_path(@userparam.id)
     else
-    	flash[:error] = "You failed to create profile"
+    	flash[:error] = "You failed to edited profile"
       render 'edit'
     end
 
