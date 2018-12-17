@@ -1,0 +1,11 @@
+<% if @products == [] || @products.nil? %>
+No products yet<br/>
+<% else %>
+<% @products.each do |product|%>
+Title: <%= product.title %><br />
+Description: <%= product.description %><br />
+Price: <%= product.price %><br />
+<hr>
+<% end %>
+<% end %>
+<%= link_to "add product", new_product_path %><br />
